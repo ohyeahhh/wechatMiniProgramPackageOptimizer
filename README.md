@@ -3,7 +3,9 @@
 ## 概述
 
 `miniProgramPackageOptimizer` 是一个专门针对 uni-app 编译出来的微信小程序工程进行包体积优化的 Vite 插件。该插件通过智能
-的组件分发策略，解决微信小程序主包 2MB 体积限制的问题。
+的组件分发策略，解决微信小程序主包超出 2MB 体积限制的问题。
+
+我的 csdn 文章：[uni-app 编译出来的微信小程序工程主包体积优化插件](https://blog.csdn.net/ohyeahhhh/article/details/153678275?spm=1011.2124.3001.6209)
 
 ## 主要功能
 
@@ -19,7 +21,8 @@
 ```typescript
 // UniApp项目中的vite.config.ts
 import { defineConfig } from "vite";
-import miniProgramPackageOptimizer from "./build/vitePlugins/miniProgramPackageOptimizer";
+import uni from "@dcloudio/vite-plugin-uni";
+import miniProgramPackageOptimizer from "./build/vitePlugins/miniProgramPackageOptimizer"; //假设你把插件代码放在了项目根目录的build/vitePlugins文件夹中
 
 export default defineConfig({
   plugins: [
@@ -34,7 +37,8 @@ export default defineConfig({
 ```typescript
 // UniApp项目中的vite.config.ts
 import { defineConfig } from "vite";
-import miniProgramPackageOptimizer from "./build/vitePlugins/miniProgramPackageOptimizer";
+import uni from "@dcloudio/vite-plugin-uni";
+import miniProgramPackageOptimizer from "./build/vitePlugins/miniProgramPackageOptimizer"; //假设你把插件代码放在了项目根目录的build/vitePlugins文件夹中
 
 export default defineConfig({
   plugins: [
